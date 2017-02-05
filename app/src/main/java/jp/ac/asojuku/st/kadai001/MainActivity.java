@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        Button clcikButton = (Button) this.findViewById(R.id.clcikButton);
-        clcikButton.setOnClickListener(this);
-        clcikButton.setOnLongClickListener(this);
+        Button clickButton = (Button) this.findViewById(R.id.clickButton);
+        clickButton.setOnClickListener(this);
+        clickButton.setOnLongClickListener(this);
     }
 
     /**
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity
         // ラジオボタンのキャプション（説明文）を取得
         String strCaption = (String) checkedRgBtn.getText();
         // 正解用Keywordを取得
-        String usersOption = (String) getResources().getString(R.string.usersOption);
+        String usersOption =  getResources().getString(R.string.usersOption);
         // 選ばれたラジオボタンのキャプションを正解として次の画面へのインテントに含める
-        intent.putExtra(usersOption, strCaption);
+        intent.putExtra("usersOption", strCaption);
 
         startActivity(intent);
     }
